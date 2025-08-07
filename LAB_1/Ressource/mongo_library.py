@@ -81,7 +81,6 @@ class MongoLibrary:
         if not query:
             raise ValueError("La requête ne peut pas être vide.")
         
-        # Validation spécifique pour users : téléphone ne peut pas être vide
         if collection == "users":
             if 'phone' in new_values:
                 phone = new_values['phone']
@@ -91,7 +90,6 @@ class MongoLibrary:
         self._validate_fields(new_values, collection, is_update=True)
         
         col = self.db[collection]
-        # Convert _id string to ObjectId dans query si présent
         if '_id' in query and isinstance(query['_id'], str):
             try:
                 query['_id'] = ObjectId(query['_id'])
@@ -107,7 +105,6 @@ class MongoLibrary:
         if not query:
             raise ValueError("La requête de suppression ne peut pas être vide.")
         col = self.db[collection]
-        # Convert _id string to ObjectId dans query si présent
         if '_id' in query and isinstance(query['_id'], str):
             try:
                 query['_id'] = ObjectId(query['_id'])
@@ -159,8 +156,12 @@ class MongoLibrary:
         if not commande:
             raise ValueError("Commande introuvable.")
         produits = commande.get("products", [])
+        if not isinstance(produits, list):
+            raise ValueError("Le champ 'products' n'est pas une liste valide.")
         if index_produit < 0 or index_produit >= len(produits):
             raise IndexError("Index de produit invalide.")
+        if "quantite" not in produits[index_produit]:
+            raise ValueError("Le produit à l'index spécifié ne contient pas le champ 'quantite'.")
         produits[index_produit]["quantite"] = nouvelle_quantite
         result = col.update_one({"_id": ObjectId(commande_id)}, {"$set": {"products": produits}})
         return result.modified_count
