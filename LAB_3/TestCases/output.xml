@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-08-07T00:30:12.696802" rpa="false" schemaversion="5">
+<suite id="s1" name="Fakestore Tests" source="C:\Users\Ndeye Mbaye\Desktop\QA Test\TESTMONGOEXAM\TestCases\fakestore_tests.robot">
+<test id="s1-t1" name="Connexion MongoDB" line="13">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Connect To Mongo">
+<msg time="2025-08-07T00:30:12.764114" level="FAIL">No keyword with name 'Connect To Mongo' found.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="FAIL" start="2025-08-07T00:30:12.764071" elapsed="0.000104">No keyword with name 'Connect To Mongo' found.</status>
+</kw>
+<arg>Connect To Mongo</arg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-08-07T00:30:12.762916" elapsed="0.001352"/>
+</kw>
+<kw name="Is Connected">
+<msg time="2025-08-07T00:30:12.765249" level="FAIL">No keyword with name 'Is Connected' found.</msg>
+<var>${connected}</var>
+<status status="FAIL" start="2025-08-07T00:30:12.765221" elapsed="0.000066">No keyword with name 'Is Connected' found.</status>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${connected}'=='False'</arg>
+<arg>Fail</arg>
+<arg>Échec de la connexion à MongoDB</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.765521" elapsed="0.000022"/>
+</kw>
+<doc>Teste la connexion MongoDB avec gestion des erreurs</doc>
+<status status="FAIL" start="2025-08-07T00:30:12.761801" elapsed="0.004069">No keyword with name 'Is Connected' found.</status>
+</test>
+<test id="s1-t2" name="Créer Un Produit Valide" line="19">
+<kw name="Connect To Mongo">
+<msg time="2025-08-07T00:30:12.767801" level="FAIL">No keyword with name 'Connect To Mongo' found.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="FAIL" start="2025-08-07T00:30:12.767749" elapsed="0.000104">No keyword with name 'Connect To Mongo' found.</status>
+</kw>
+<kw name="Is Connected">
+<var>${connected}</var>
+<status status="NOT RUN" start="2025-08-07T00:30:12.768149" elapsed="0.000023"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${connected}</arg>
+<arg>msg=Connexion MongoDB non établie</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.768397" elapsed="0.000021"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${product}</var>
+<arg>title=Test Product</arg>
+<arg>price=99.99</arg>
+<arg>category=electronics</arg>
+<arg>image=test.jpg</arg>
+<arg>phone=770000000</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.768617" elapsed="0.000020"/>
+</kw>
+<kw name="Insert Document">
+<var>${result}</var>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${product}</arg>
+<status status="NOT RUN" start="2025-08-07T00:30:12.768854" elapsed="0.000018"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<arg>${result}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.769027" elapsed="0.000020"/>
+</kw>
+<status status="FAIL" start="2025-08-07T00:30:12.766464" elapsed="0.002819">No keyword with name 'Connect To Mongo' found.</status>
+</test>
+<test id="s1-t3" name="Créer Produit Sans Titre (Invalide)" line="27">
+<kw name="Connect To Mongo">
+<msg time="2025-08-07T00:30:12.771433" level="FAIL">No keyword with name 'Connect To Mongo' found.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="FAIL" start="2025-08-07T00:30:12.771397" elapsed="0.000081">No keyword with name 'Connect To Mongo' found.</status>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${product}</var>
+<arg>price=99.99</arg>
+<arg>category=electronics</arg>
+<arg>image=test.jpg</arg>
+<arg>phone=770000000</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.771729" elapsed="0.000025"/>
+</kw>
+<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<arg>*</arg>
+<arg>Insert Document</arg>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${product}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.772015" elapsed="0.000024"/>
+</kw>
+<status status="FAIL" start="2025-08-07T00:30:12.770196" elapsed="0.002100">No keyword with name 'Connect To Mongo' found.</status>
+</test>
+<test id="s1-t4" name="Créer Produit Prix Texte (Invalide)" line="32">
+<kw name="Connect To Mongo">
+<msg time="2025-08-07T00:30:12.774294" level="FAIL">No keyword with name 'Connect To Mongo' found.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="FAIL" start="2025-08-07T00:30:12.774263" elapsed="0.000079">No keyword with name 'Connect To Mongo' found.</status>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${product}</var>
+<arg>title=Produit Test</arg>
+<arg>price=invalidPrice</arg>
+<arg>category=electronics</arg>
+<arg>image=test.jpg</arg>
+<arg>phone=770000000</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.774603" elapsed="0.000020"/>
+</kw>
+<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<arg>*</arg>
+<arg>Insert Document</arg>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${product}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.774847" elapsed="0.000018"/>
+</kw>
+<status status="FAIL" start="2025-08-07T00:30:12.773140" elapsed="0.001951">No keyword with name 'Connect To Mongo' found.</status>
+</test>
+<test id="s1-t5" name="Lire Tous Les Produits" line="37">
+<kw name="Connect To Mongo">
+<msg time="2025-08-07T00:30:12.777742" level="FAIL">No keyword with name 'Connect To Mongo' found.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="FAIL" start="2025-08-07T00:30:12.777700" elapsed="0.000088">No keyword with name 'Connect To Mongo' found.</status>
+</kw>
+<kw name="Find Documents">
+<var>${result}</var>
+<arg>${COLLECTION_NAME}</arg>
+<status status="NOT RUN" start="2025-08-07T00:30:12.778158" elapsed="0.000035"/>
+</kw>
+<kw name="Length Should Be Greater Than">
+<arg>${result}</arg>
+<arg>0</arg>
+<status status="NOT RUN" start="2025-08-07T00:30:12.778387" elapsed="0.000018"/>
+</kw>
+<status status="FAIL" start="2025-08-07T00:30:12.776182" elapsed="0.002544">No keyword with name 'Connect To Mongo' found.</status>
+</test>
+<test id="s1-t6" name="Lire Produits Avec Catégorie Vide (Invalide)" line="42">
+<kw name="Connect To Mongo">
+<msg time="2025-08-07T00:30:12.781471" level="FAIL">No keyword with name 'Connect To Mongo' found.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="FAIL" start="2025-08-07T00:30:12.781420" elapsed="0.000099">No keyword with name 'Connect To Mongo' found.</status>
+</kw>
+<kw name="Find Documents">
+<var>${result}</var>
+<arg>${COLLECTION_NAME}</arg>
+<status status="NOT RUN" start="2025-08-07T00:30:12.781946" elapsed="0.000037"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${vide}</var>
+<arg>[item for item in ${result} if 'category' in item and item['category'] == '']</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.782278" elapsed="0.000036"/>
+</kw>
+<kw name="Length Should Be" owner="BuiltIn">
+<arg>${vide}</arg>
+<arg>0</arg>
+<doc>Verifies that the length of the given item is correct.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.782587" elapsed="0.000035"/>
+</kw>
+<status status="FAIL" start="2025-08-07T00:30:12.779475" elapsed="0.003490">No keyword with name 'Connect To Mongo' found.</status>
+</test>
+<test id="s1-t7" name="Lire Produits Avec Prix Negatif (Invalide)" line="48">
+<kw name="Connect To Mongo">
+<msg time="2025-08-07T00:30:12.785235" level="FAIL">No keyword with name 'Connect To Mongo' found.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="FAIL" start="2025-08-07T00:30:12.785203" elapsed="0.000208">No keyword with name 'Connect To Mongo' found.</status>
+</kw>
+<kw name="Find Documents">
+<var>${result}</var>
+<arg>${COLLECTION_NAME}</arg>
+<status status="NOT RUN" start="2025-08-07T00:30:12.785642" elapsed="0.000018"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${negatifs}</var>
+<arg>[item for item in ${result} if 'price' in item and item['price'] &lt; 0]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.785858" elapsed="0.000020"/>
+</kw>
+<kw name="Length Should Be" owner="BuiltIn">
+<arg>${negatifs}</arg>
+<arg>0</arg>
+<doc>Verifies that the length of the given item is correct.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.786225" elapsed="0.000052"/>
+</kw>
+<status status="FAIL" start="2025-08-07T00:30:12.783966" elapsed="0.002794">No keyword with name 'Connect To Mongo' found.</status>
+</test>
+<test id="s1-t8" name="Mettre à Jour Prix Produit Valide" line="54">
+<kw name="Connect To Mongo">
+<msg time="2025-08-07T00:30:12.789591" level="FAIL">No keyword with name 'Connect To Mongo' found.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="FAIL" start="2025-08-07T00:30:12.789543" elapsed="0.000102">No keyword with name 'Connect To Mongo' found.</status>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${query}</var>
+<arg>title=Test Product</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.790064" elapsed="0.000036"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${update}</var>
+<arg>price=79.99</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.790339" elapsed="0.000021"/>
+</kw>
+<kw name="Update Document">
+<var>${result}</var>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${query}</arg>
+<arg>${update}</arg>
+<status status="NOT RUN" start="2025-08-07T00:30:12.790521" elapsed="0.000017"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${result} &gt;= 1</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.790690" elapsed="0.000017"/>
+</kw>
+<status status="FAIL" start="2025-08-07T00:30:12.788161" elapsed="0.002743">No keyword with name 'Connect To Mongo' found.</status>
+</test>
+<test id="s1-t9" name="Mettre Prix Vide (Invalide)" line="61">
+<kw name="Connect To Mongo">
+<msg time="2025-08-07T00:30:12.794315" level="FAIL">No keyword with name 'Connect To Mongo' found.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="FAIL" start="2025-08-07T00:30:12.794189" elapsed="0.000262">No keyword with name 'Connect To Mongo' found.</status>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${query}</var>
+<arg>title=Test Product</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.795140" elapsed="0.000044"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${update}</var>
+<arg>{"price": None}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.795532" elapsed="0.000032"/>
+</kw>
+<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<arg>*</arg>
+<arg>Update Document</arg>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${query}</arg>
+<arg>${update}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.795811" elapsed="0.000033"/>
+</kw>
+<status status="FAIL" start="2025-08-07T00:30:12.792132" elapsed="0.004184">No keyword with name 'Connect To Mongo' found.</status>
+</test>
+<test id="s1-t10" name="Mettre Prix Négatif (Invalide)" line="67">
+<kw name="Connect To Mongo">
+<msg time="2025-08-07T00:30:12.798518" level="FAIL">No keyword with name 'Connect To Mongo' found.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="FAIL" start="2025-08-07T00:30:12.798473" elapsed="0.000093">No keyword with name 'Connect To Mongo' found.</status>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${query}</var>
+<arg>title=Test Product</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.798820" elapsed="0.000021"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${update}</var>
+<arg>price=-100</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.799124" elapsed="0.000025"/>
+</kw>
+<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<arg>*</arg>
+<arg>Update Document</arg>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${query}</arg>
+<arg>${update}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.799372" elapsed="0.000021"/>
+</kw>
+<status status="FAIL" start="2025-08-07T00:30:12.797196" elapsed="0.002425">No keyword with name 'Connect To Mongo' found.</status>
+</test>
+<test id="s1-t11" name="Supprimer Produit Valide" line="73">
+<kw name="Connect To Mongo">
+<msg time="2025-08-07T00:30:12.802176" level="FAIL">No keyword with name 'Connect To Mongo' found.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="FAIL" start="2025-08-07T00:30:12.802135" elapsed="0.000089">No keyword with name 'Connect To Mongo' found.</status>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${query}</var>
+<arg>title=Test Product</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.802527" elapsed="0.000021"/>
+</kw>
+<kw name="Delete Document">
+<var>${result}</var>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${query}</arg>
+<status status="NOT RUN" start="2025-08-07T00:30:12.802719" elapsed="0.000016"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${result} &gt;= 1</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.802907" elapsed="0.000018"/>
+</kw>
+<status status="FAIL" start="2025-08-07T00:30:12.800588" elapsed="0.002554">No keyword with name 'Connect To Mongo' found.</status>
+</test>
+<test id="s1-t12" name="Supprimer Produit Inexistant" line="79">
+<kw name="Connect To Mongo">
+<msg time="2025-08-07T00:30:12.805228" level="FAIL">No keyword with name 'Connect To Mongo' found.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="FAIL" start="2025-08-07T00:30:12.805190" elapsed="0.000085">No keyword with name 'Connect To Mongo' found.</status>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${query}</var>
+<arg>title=Produit Inexistant</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.805703" elapsed="0.000037"/>
+</kw>
+<kw name="Delete Document">
+<var>${result}</var>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${query}</arg>
+<status status="NOT RUN" start="2025-08-07T00:30:12.805978" elapsed="0.000020"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.806165" elapsed="0.000020"/>
+</kw>
+<status status="FAIL" start="2025-08-07T00:30:12.803979" elapsed="0.002407">No keyword with name 'Connect To Mongo' found.</status>
+</test>
+<test id="s1-t13" name="Supprimer Avec Champs Vide (Invalide)" line="85">
+<kw name="Connect To Mongo">
+<msg time="2025-08-07T00:30:12.808872" level="FAIL">No keyword with name 'Connect To Mongo' found.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="FAIL" start="2025-08-07T00:30:12.808835" elapsed="0.000082">No keyword with name 'Connect To Mongo' found.</status>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${query}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.809154" elapsed="0.000129"/>
+</kw>
+<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<arg>*</arg>
+<arg>Delete Document</arg>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${query}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<status status="NOT RUN" start="2025-08-07T00:30:12.809464" elapsed="0.000090"/>
+</kw>
+<status status="FAIL" start="2025-08-07T00:30:12.807421" elapsed="0.002343">No keyword with name 'Connect To Mongo' found.</status>
+</test>
+<status status="FAIL" start="2025-08-07T00:30:12.698791" elapsed="0.111937"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="13" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Fakestore Tests" id="s1" pass="0" fail="13" skip="0">Fakestore Tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-08-07T00:30:12.751492" level="ERROR">Error in file 'C:\Users\Ndeye Mbaye\Desktop\QA Test\TESTMONGOEXAM\TestCases\fakestore_tests.robot' on line 2: Importing library '../Ressource/mongo_library' failed: ModuleNotFoundError: No module named '.'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\Ndeye Mbaye\AppData\Local\Programs\Python\Python313\Scripts\robot.exe
+  C:\Users\Ndeye Mbaye\AppData\Local\Programs\Python\Python313\python313.zip
+  C:\Users\Ndeye Mbaye\AppData\Local\Programs\Python\Python313\DLLs
+  C:\Users\Ndeye Mbaye\AppData\Local\Programs\Python\Python313\Lib
+  C:\Users\Ndeye Mbaye\AppData\Local\Programs\Python\Python313
+  C:\Users\Ndeye Mbaye\AppData\Local\Programs\Python\Python313\Lib\site-packages
+  C:\Users\Ndeye Mbaye\AppData\Local\Programs\Python\Python313\Lib\site-packages\win32
+  C:\Users\Ndeye Mbaye\AppData\Local\Programs\Python\Python313\Lib\site-packages\win32\lib
+  C:\Users\Ndeye Mbaye\AppData\Local\Programs\Python\Python313\Lib\site-packages\Pythonwin</msg>
+</errors>
+</robot>

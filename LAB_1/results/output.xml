@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-08-06T23:48:00.086801" rpa="false" schemaversion="5">
+<suite id="s1" name="TestMongoExam" source="C:\Users\Ndeye Mbaye\Desktop\QA Test\TestMongoExam">
+<suite id="s1-s1" name="TestCases" source="C:\Users\Ndeye Mbaye\Desktop\QA Test\TestMongoExam\TestCases">
+<suite id="s1-s1-s1" name="Fakestore Tests" source="C:\Users\Ndeye Mbaye\Desktop\QA Test\TestMongoExam\TestCases\fakestore_tests.robot">
+<kw name="Connect To Mongo" type="SETUP">
+<msg time="2025-08-06T23:48:00.439448" level="FAIL">No keyword with name 'Connect To Mongo' found.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="FAIL" start="2025-08-06T23:48:00.438386" elapsed="0.022634">No keyword with name 'Connect To Mongo' found.</status>
+</kw>
+<test id="s1-s1-s1-t1" name="Test Connexion MongoDB" line="16">
+<status status="FAIL" start="2025-08-06T23:48:00.462174" elapsed="0.009305">Parent suite setup failed:
+No keyword with name 'Connect To Mongo' found.</status>
+</test>
+<kw name="Disconnect From Mongo" type="TEARDOWN">
+<msg time="2025-08-06T23:48:00.484651" level="FAIL">No keyword with name 'Disconnect From Mongo' found.</msg>
+<status status="FAIL" start="2025-08-06T23:48:00.483451" elapsed="0.006931">No keyword with name 'Disconnect From Mongo' found.</status>
+</kw>
+<status status="FAIL" start="2025-08-06T23:48:00.154800" elapsed="0.337039">Suite setup failed:
+No keyword with name 'Connect To Mongo' found.
+
+Also suite teardown failed:
+No keyword with name 'Disconnect From Mongo' found.</status>
+</suite>
+<status status="FAIL" start="2025-08-06T23:48:00.145340" elapsed="0.366077"/>
+</suite>
+<status status="FAIL" start="2025-08-06T23:48:00.100242" elapsed="0.420182"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TestMongoExam" id="s1" pass="0" fail="1" skip="0">TestMongoExam</stat>
+<stat name="TestCases" id="s1-s1" pass="0" fail="1" skip="0">TestMongoExam.TestCases</stat>
+<stat name="Fakestore Tests" id="s1-s1-s1" pass="0" fail="1" skip="0">TestMongoExam.TestCases.Fakestore Tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-08-06T23:48:00.398936" level="WARN">Imported library 'C:\Users\Ndeye Mbaye\Desktop\QA Test\TestMongoExam\Ressource\mongo_library.py' contains no keywords.</msg>
+</errors>
+</robot>
