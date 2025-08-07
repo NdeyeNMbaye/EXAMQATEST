@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.3 on win32)" generated="2025-08-07T14:58:15.983042" rpa="false" schemaversion="5">
+<suite id="s1" name="Fakestore Tests" source="C:\Users\Ndeye Mbaye\Desktop\QA Test\TESTMONGOEXAM\TestCases\fakestore_tests.robot">
+<test id="s1-t1" name="Créer Un Fulfillment Valide" line="5">
+<kw name="Create Valid Shipping Fulfillment">
+<msg time="2025-08-07T14:58:16.031777" level="FAIL">No keyword with name 'Create Valid Shipping Fulfillment' found.</msg>
+<var>${fulfillmentId}</var>
+<arg>${VALID_ORDER_ID}</arg>
+<arg>${VALID_LINE_ITEM}</arg>
+<status status="FAIL" start="2025-08-07T14:58:16.031728" elapsed="0.000110">No keyword with name 'Create Valid Shipping Fulfillment' found.</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Créé avec succès: ${fulfillmentId}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-08-07T14:58:16.032428" elapsed="0.000033"/>
+</kw>
+<status status="FAIL" start="2025-08-07T14:58:16.030328" elapsed="0.002360">No keyword with name 'Create Valid Shipping Fulfillment' found.</status>
+</test>
+<test id="s1-t2" name="Créer Un Fulfillment Invalide" line="9">
+<kw name="Create Invalid Shipping Fulfillment">
+<msg time="2025-08-07T14:58:16.035186" level="FAIL">No keyword with name 'Create Invalid Shipping Fulfillment' found.</msg>
+<arg>${VALID_ORDER_ID}</arg>
+<status status="FAIL" start="2025-08-07T14:58:16.035145" elapsed="0.000087">No keyword with name 'Create Invalid Shipping Fulfillment' found.</status>
+</kw>
+<status status="FAIL" start="2025-08-07T14:58:16.033713" elapsed="0.002060">No keyword with name 'Create Invalid Shipping Fulfillment' found.</status>
+</test>
+<test id="s1-t3" name="Récupérer Fulfillment Valide" line="12">
+<kw name="Create Valid Shipping Fulfillment">
+<msg time="2025-08-07T14:58:16.038028" level="FAIL">No keyword with name 'Create Valid Shipping Fulfillment' found.</msg>
+<var>${fulfillmentId}</var>
+<arg>${VALID_ORDER_ID}</arg>
+<arg>${VALID_LINE_ITEM}</arg>
+<status status="FAIL" start="2025-08-07T14:58:16.037990" elapsed="0.000078">No keyword with name 'Create Valid Shipping Fulfillment' found.</status>
+</kw>
+<kw name="Get Shipping Fulfillment">
+<arg>${VALID_ORDER_ID}</arg>
+<arg>${fulfillmentId}</arg>
+<status status="NOT RUN" start="2025-08-07T14:58:16.038322" elapsed="0.000020"/>
+</kw>
+<status status="FAIL" start="2025-08-07T14:58:16.036910" elapsed="0.001914">No keyword with name 'Create Valid Shipping Fulfillment' found.</status>
+</test>
+<test id="s1-t4" name="Récupérer Fulfillment Invalide" line="16">
+<kw name="Get Shipping Fulfillment Invalid">
+<msg time="2025-08-07T14:58:16.040492" level="FAIL">No keyword with name 'Get Shipping Fulfillment Invalid' found.</msg>
+<arg>${VALID_ORDER_ID}</arg>
+<status status="FAIL" start="2025-08-07T14:58:16.040448" elapsed="0.000090">No keyword with name 'Get Shipping Fulfillment Invalid' found.</status>
+</kw>
+<status status="FAIL" start="2025-08-07T14:58:16.039595" elapsed="0.001238">No keyword with name 'Get Shipping Fulfillment Invalid' found.</status>
+</test>
+<test id="s1-t5" name="Lister Tous Les Fulfillments Valides" line="19">
+<kw name="Get All Shipping Fulfillments">
+<msg time="2025-08-07T14:58:16.042314" level="FAIL">No keyword with name 'Get All Shipping Fulfillments' found.</msg>
+<arg>${VALID_ORDER_ID}</arg>
+<status status="FAIL" start="2025-08-07T14:58:16.042283" elapsed="0.000070">No keyword with name 'Get All Shipping Fulfillments' found.</status>
+</kw>
+<status status="FAIL" start="2025-08-07T14:58:16.041496" elapsed="0.001234">No keyword with name 'Get All Shipping Fulfillments' found.</status>
+</test>
+<test id="s1-t6" name="Lister Tous Les Fulfillments Invalide" line="22">
+<kw name="Get All Shipping Fulfillments Invalid">
+<msg time="2025-08-07T14:58:16.045050" level="FAIL">No keyword with name 'Get All Shipping Fulfillments Invalid' found.</msg>
+<arg>${INVALID_ORDER_ID}</arg>
+<status status="FAIL" start="2025-08-07T14:58:16.044989" elapsed="0.000115">No keyword with name 'Get All Shipping Fulfillments Invalid' found.</status>
+</kw>
+<status status="FAIL" start="2025-08-07T14:58:16.043884" elapsed="0.001584">No keyword with name 'Get All Shipping Fulfillments Invalid' found.</status>
+</test>
+<status status="FAIL" start="2025-08-07T14:58:15.985282" elapsed="0.061419"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="6" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Fakestore Tests" id="s1" pass="0" fail="6" skip="0">Fakestore Tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-08-07T14:58:16.028859" level="ERROR">Error in file 'C:\Users\Ndeye Mbaye\Desktop\QA Test\TESTMONGOEXAM\TestCases\fakestore_tests.robot' on line 2: Resource file '..\Ressource\ebay_keywords.robot' does not exist.</msg>
+</errors>
+</robot>
