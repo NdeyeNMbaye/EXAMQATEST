@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-08-07T13:00:13.146988" rpa="false" schemaversion="5">
+<suite id="s1" name="Looma Tests" source="C:\Users\MARIAMA\Desktop\Master1_GL\QA_Test\QATEST\LAB4\testcases\looma_tests.robot">
+<test id="s1-t1" name="Test Authentification" line="8">
+<kw name="Démarrer l'application" owner="looma_keywords">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>noReset=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-08-07T13:00:14.089201" elapsed="18.186276"/>
+</kw>
+<status status="PASS" start="2025-08-07T13:00:14.088360" elapsed="18.187531"/>
+</kw>
+<kw name="Se connecter" owner="looma_keywords">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-08-07T13:00:32.280269" level="INFO">Clicking element 'android=new UiSelector().className("android.widget.EditText").instance(0)'.</msg>
+<arg>android=new UiSelector().className("android.widget.EditText").instance(0)</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-08-07T13:00:32.277743" elapsed="1.173240"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-08-07T13:00:33.453950" level="INFO">Typing text 'johnd' into text field 'android=new UiSelector().className("android.widget.EditText").instance(0)'</msg>
+<arg>android=new UiSelector().className("android.widget.EditText").instance(0)</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-08-07T13:00:33.451491" elapsed="0.758904"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-08-07T13:00:34.213502" level="INFO">Clicking element 'android=new UiSelector().className("android.widget.EditText").instance(1)'.</msg>
+<arg>android=new UiSelector().className("android.widget.EditText").instance(1)</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-08-07T13:00:34.210729" elapsed="1.242460"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-08-07T13:00:35.456881" level="INFO">Typing text 'm38rmF$' into text field 'android=new UiSelector().className("android.widget.EditText").instance(1)'</msg>
+<arg>android=new UiSelector().className("android.widget.EditText").instance(1)</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-08-07T13:00:35.453884" elapsed="1.033836"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-07T13:00:37.489558" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-07T13:00:36.488092" elapsed="1.001704"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-08-07T13:00:37.493547" level="INFO">Clicking element 'accessibility_id=Se connecter'.</msg>
+<arg>accessibility_id=Se connecter</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-08-07T13:00:37.490136" elapsed="0.680349"/>
+</kw>
+<status status="PASS" start="2025-08-07T13:00:32.276965" elapsed="5.893760"/>
+</kw>
+<kw name="Fermer l'application" owner="looma_keywords">
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2025-08-07T13:00:38.172009" elapsed="0.701322"/>
+</kw>
+<status status="PASS" start="2025-08-07T13:00:38.171454" elapsed="0.702052"/>
+</kw>
+<status status="PASS" start="2025-08-07T13:00:14.087628" elapsed="24.786458"/>
+</test>
+<status status="PASS" start="2025-08-07T13:00:13.150699" elapsed="25.725978"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Looma Tests" id="s1" pass="1" fail="0" skip="0">Looma Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
