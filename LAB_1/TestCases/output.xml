@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.3 on win32)" generated="2025-08-07T15:07:25.461891" rpa="false" schemaversion="5">
+<suite id="s1" name="Testuser" source="C:\Users\Ndeye Mbaye\Desktop\QA Test\TESTMONGOEXAM\LAB_1\TestCases\testuser.robot">
+<test id="s1-t1" name="Créer Utilisateur Valide" line="14">
+<kw name="Connect To Mongo" owner="mongo_library">
+<msg time="2025-08-07T15:07:27.114974" level="INFO">[MongoLibrary] Connexion MongoDB réussie.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="PASS" start="2025-08-07T15:07:25.713895" elapsed="1.401256"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-08-07T15:07:27.117105" level="INFO">${user} = {'email': 'john@gmail.com', 'username': 'johnd', 'password': 'hashedpassword', 'name': "{'firstname': 'John', 'lastname': 'Doe'}", 'address': "{'city': 'kilcoole', 'street': '7835 new road', 'zipcode'...</msg>
+<var>${user}</var>
+<arg>email=john@gmail.com</arg>
+<arg>username=johnd</arg>
+<arg>password=hashedpassword</arg>
+<arg>name={'firstname': 'John', 'lastname': 'Doe'}</arg>
+<arg>address={'city': 'kilcoole', 'street': '7835 new road', 'zipcode': '12926-3874', 'geolocation': {'lat': '-37.3159', 'long': '81.1496'}}</arg>
+<arg>phone=1-570-236-7033</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-08-07T15:07:27.115824" elapsed="0.001314"/>
+</kw>
+<kw name="Insert Document" owner="mongo_library">
+<msg time="2025-08-07T15:07:27.190777" level="INFO">${result} = 6894b31fd074f7b5a570aeaa</msg>
+<var>${result}</var>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${user}</arg>
+<status status="PASS" start="2025-08-07T15:07:27.117524" elapsed="0.073294"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-08-07T15:07:27.191635" level="INFO">Length is 24.</msg>
+<arg>${result}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-08-07T15:07:27.191358" elapsed="0.000359"/>
+</kw>
+<doc>C-01 Scénario passant - création d’un utilisateur valide</doc>
+<status status="PASS" start="2025-08-07T15:07:25.712639" elapsed="1.479546"/>
+</test>
+<test id="s1-t2" name="Créer Utilisateur Sans Email (Invalide)" line="27">
+<kw name="Connect To Mongo" owner="mongo_library">
+<msg time="2025-08-07T15:07:28.031055" level="INFO">[MongoLibrary] Connexion MongoDB réussie.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="PASS" start="2025-08-07T15:07:27.194365" elapsed="0.836842"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-08-07T15:07:28.032171" level="INFO">${user} = {'username': 'johnd', 'password': 'hashedpassword'}</msg>
+<var>${user}</var>
+<arg>username=johnd</arg>
+<arg>password=hashedpassword</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-08-07T15:07:28.031758" elapsed="0.000468"/>
+</kw>
+<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<kw name="Insert Document" owner="mongo_library">
+<msg time="2025-08-07T15:07:28.033002" level="FAIL">ValueError: Le champ 'email' est requis.</msg>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${user}</arg>
+<status status="FAIL" start="2025-08-07T15:07:28.032787" elapsed="0.001108">ValueError: Le champ 'email' est requis.</status>
+</kw>
+<arg>*</arg>
+<arg>Insert Document</arg>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${user}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<status status="PASS" start="2025-08-07T15:07:28.032615" elapsed="0.001446"/>
+</kw>
+<doc>C-02 Scénario non passant - utilisateur sans email =&gt; erreur</doc>
+<status status="PASS" start="2025-08-07T15:07:27.193725" elapsed="0.840736"/>
+</test>
+<test id="s1-t3" name="Créer Utilisateur Email Vide (Invalide)" line="35">
+<kw name="Connect To Mongo" owner="mongo_library">
+<msg time="2025-08-07T15:07:28.856711" level="INFO">[MongoLibrary] Connexion MongoDB réussie.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="PASS" start="2025-08-07T15:07:28.036020" elapsed="0.820853"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-08-07T15:07:28.857928" level="INFO">${user} = {'email': '', 'username': 'johnd', 'password': 'hashedpassword'}</msg>
+<var>${user}</var>
+<arg>email=</arg>
+<arg>username=johnd</arg>
+<arg>password=hashedpassword</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-08-07T15:07:28.857516" elapsed="0.000470"/>
+</kw>
+<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<kw name="Insert Document" owner="mongo_library">
+<msg time="2025-08-07T15:07:28.858946" level="FAIL">ValueError: Le champ 'email' est requis.</msg>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${user}</arg>
+<status status="FAIL" start="2025-08-07T15:07:28.858638" elapsed="0.001229">ValueError: Le champ 'email' est requis.</status>
+</kw>
+<arg>*</arg>
+<arg>Insert Document</arg>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${user}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<status status="PASS" start="2025-08-07T15:07:28.858416" elapsed="0.001569"/>
+</kw>
+<doc>C-03 Scénario non passant - utilisateur avec email vide =&gt; erreur</doc>
+<status status="PASS" start="2025-08-07T15:07:28.035445" elapsed="0.824816"/>
+</test>
+<test id="s1-t4" name="Lire Tous Les Utilisateurs" line="46">
+<kw name="Connect To Mongo" owner="mongo_library">
+<msg time="2025-08-07T15:07:29.663239" level="INFO">[MongoLibrary] Connexion MongoDB réussie.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="PASS" start="2025-08-07T15:07:28.861940" elapsed="0.801463"/>
+</kw>
+<kw name="Find Documents" owner="mongo_library">
+<msg time="2025-08-07T15:07:29.734260" level="INFO">${result} = [{'_id': '6894b31fd074f7b5a570aeaa', 'email': 'john@gmail.com', 'username': 'johnd', 'password': 'hashedpassword', 'name': "{'firstname': 'John', 'lastname': 'Doe'}", 'address': "{'city': 'kilcoole', ...</msg>
+<var>${result}</var>
+<arg>${COLLECTION_NAME}</arg>
+<status status="PASS" start="2025-08-07T15:07:29.663954" elapsed="0.070408"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>len(${result}) &gt; 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-08-07T15:07:29.734996" elapsed="0.000381"/>
+</kw>
+<doc>R-01 Scénario passant - lire tous les utilisateurs (doit retourner &gt; 0)</doc>
+<status status="PASS" start="2025-08-07T15:07:28.861192" elapsed="0.874439"/>
+</test>
+<test id="s1-t5" name="Lire Utilisateurs Email Vide (Invalide)" line="52">
+<kw name="Connect To Mongo" owner="mongo_library">
+<msg time="2025-08-07T15:07:30.587734" level="INFO">[MongoLibrary] Connexion MongoDB réussie.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="PASS" start="2025-08-07T15:07:29.737554" elapsed="0.850302"/>
+</kw>
+<kw name="Find Documents" owner="mongo_library">
+<msg time="2025-08-07T15:07:30.656656" level="INFO">${result} = [{'_id': '6894b31fd074f7b5a570aeaa', 'email': 'john@gmail.com', 'username': 'johnd', 'password': 'hashedpassword', 'name': "{'firstname': 'John', 'lastname': 'Doe'}", 'address': "{'city': 'kilcoole', ...</msg>
+<var>${result}</var>
+<arg>${COLLECTION_NAME}</arg>
+<status status="PASS" start="2025-08-07T15:07:30.588177" elapsed="0.068570"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-07T15:07:30.658107" level="INFO">${vide} = []</msg>
+<var>${vide}</var>
+<arg>[item for item in ${result} if 'email' in item and item['email'] == '']</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-07T15:07:30.657428" elapsed="0.000705"/>
+</kw>
+<kw name="Length Should Be" owner="BuiltIn">
+<msg time="2025-08-07T15:07:30.658508" level="INFO">Length is 0.</msg>
+<arg>${vide}</arg>
+<arg>0</arg>
+<doc>Verifies that the length of the given item is correct.</doc>
+<status status="PASS" start="2025-08-07T15:07:30.658372" elapsed="0.000176"/>
+</kw>
+<doc>R-02 Scénario non passant - aucun utilisateur ne doit avoir un email vide</doc>
+<status status="PASS" start="2025-08-07T15:07:29.737175" elapsed="0.921805"/>
+</test>
+<test id="s1-t6" name="Lire Utilisateurs Username Vide (Invalide)" line="59">
+<kw name="Connect To Mongo" owner="mongo_library">
+<msg time="2025-08-07T15:07:31.478758" level="INFO">[MongoLibrary] Connexion MongoDB réussie.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="PASS" start="2025-08-07T15:07:30.661007" elapsed="0.817878"/>
+</kw>
+<kw name="Find Documents" owner="mongo_library">
+<msg time="2025-08-07T15:07:31.547447" level="INFO">${result} = [{'_id': '6894b31fd074f7b5a570aeaa', 'email': 'john@gmail.com', 'username': 'johnd', 'password': 'hashedpassword', 'name': "{'firstname': 'John', 'lastname': 'Doe'}", 'address': "{'city': 'kilcoole', ...</msg>
+<var>${result}</var>
+<arg>${COLLECTION_NAME}</arg>
+<status status="PASS" start="2025-08-07T15:07:31.479339" elapsed="0.068175"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-07T15:07:31.548600" level="INFO">${vide} = []</msg>
+<var>${vide}</var>
+<arg>[item for item in ${result} if 'username' in item and item['username'] == '']</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-07T15:07:31.548004" elapsed="0.000617"/>
+</kw>
+<kw name="Length Should Be" owner="BuiltIn">
+<msg time="2025-08-07T15:07:31.549188" level="INFO">Length is 0.</msg>
+<arg>${vide}</arg>
+<arg>0</arg>
+<doc>Verifies that the length of the given item is correct.</doc>
+<status status="PASS" start="2025-08-07T15:07:31.548965" elapsed="0.000294"/>
+</kw>
+<doc>R-03 Scénario non passant - aucun utilisateur ne doit avoir un username vide</doc>
+<status status="PASS" start="2025-08-07T15:07:30.660486" elapsed="0.889123"/>
+</test>
+<test id="s1-t7" name="Mettre à Jour Téléphone Utilisateur Valide" line="68">
+<kw name="Connect To Mongo" owner="mongo_library">
+<msg time="2025-08-07T15:07:32.377010" level="INFO">[MongoLibrary] Connexion MongoDB réussie.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="PASS" start="2025-08-07T15:07:31.551378" elapsed="0.825761"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-08-07T15:07:32.377774" level="INFO">${query} = {'email': 'john@gmail.com'}</msg>
+<var>${query}</var>
+<arg>email=john@gmail.com</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-08-07T15:07:32.377555" elapsed="0.000244"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-08-07T15:07:32.378421" level="INFO">${update} = {'phone': '1234567890'}</msg>
+<var>${update}</var>
+<arg>phone=1234567890</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-08-07T15:07:32.378213" elapsed="0.000236"/>
+</kw>
+<kw name="Update Document" owner="mongo_library">
+<msg time="2025-08-07T15:07:32.449666" level="INFO">${result} = 1</msg>
+<var>${result}</var>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${query}</arg>
+<arg>${update}</arg>
+<status status="PASS" start="2025-08-07T15:07:32.378705" elapsed="0.071049"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${result} &gt;= 1</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-08-07T15:07:32.450363" elapsed="0.000299"/>
+</kw>
+<doc>U-01 Scénario passant - mise à jour téléphone valide</doc>
+<status status="PASS" start="2025-08-07T15:07:31.550659" elapsed="0.900370"/>
+</test>
+<test id="s1-t8" name="Mettre Téléphone Vide (Invalide)" line="76">
+<kw name="Connect To Mongo" owner="mongo_library">
+<msg time="2025-08-07T15:07:33.278167" level="INFO">[MongoLibrary] Connexion MongoDB réussie.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="PASS" start="2025-08-07T15:07:32.452894" elapsed="0.825367"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-08-07T15:07:33.279001" level="INFO">${query} = {'email': 'john@gmail.com'}</msg>
+<var>${query}</var>
+<arg>email=john@gmail.com</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-08-07T15:07:33.278720" elapsed="0.000307"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-08-07T15:07:33.279955" level="INFO">${update} = {'phone': ''}</msg>
+<var>${update}</var>
+<arg>phone=</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-08-07T15:07:33.279544" elapsed="0.000437"/>
+</kw>
+<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<kw name="Update Document" owner="mongo_library">
+<msg time="2025-08-07T15:07:33.280914" level="FAIL">ValueError: Le champ 'phone' ne peut pas être vide.</msg>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${query}</arg>
+<arg>${update}</arg>
+<status status="FAIL" start="2025-08-07T15:07:33.280566" elapsed="0.001488">ValueError: Le champ 'phone' ne peut pas être vide.</status>
+</kw>
+<arg>*</arg>
+<arg>Update Document</arg>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${query}</arg>
+<arg>${update}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<status status="PASS" start="2025-08-07T15:07:33.280349" elapsed="0.001811"/>
+</kw>
+<doc>U-02 Scénario non passant - mise à jour avec téléphone vide =&gt; erreur</doc>
+<status status="PASS" start="2025-08-07T15:07:32.452351" elapsed="0.830104"/>
+</test>
+<test id="s1-t9" name="Mettre à Jour Utilisateur Inexistant (Invalide)" line="83">
+<kw name="Connect To Mongo" owner="mongo_library">
+<msg time="2025-08-07T15:07:34.097477" level="INFO">[MongoLibrary] Connexion MongoDB réussie.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="PASS" start="2025-08-07T15:07:33.284257" elapsed="0.813373"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-08-07T15:07:34.098669" level="INFO">${query} = {'email': 'nonexistent@gmail.com'}</msg>
+<var>${query}</var>
+<arg>email=nonexistent@gmail.com</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-08-07T15:07:34.098259" elapsed="0.000434"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-08-07T15:07:34.098939" level="INFO">${update} = {'phone': '1234567890'}</msg>
+<var>${update}</var>
+<arg>phone=1234567890</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-08-07T15:07:34.098836" elapsed="0.000122"/>
+</kw>
+<kw name="Update Document" owner="mongo_library">
+<msg time="2025-08-07T15:07:34.166621" level="INFO">${result} = 0</msg>
+<var>${result}</var>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${query}</arg>
+<arg>${update}</arg>
+<status status="PASS" start="2025-08-07T15:07:34.099320" elapsed="0.067424"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-08-07T15:07:34.167754" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-08-07T15:07:34.167383" elapsed="0.000502"/>
+</kw>
+<doc>U-03 Scénario non passant - mise à jour d’un utilisateur inexistant</doc>
+<status status="PASS" start="2025-08-07T15:07:33.283609" elapsed="0.884738"/>
+</test>
+<test id="s1-t10" name="Supprimer Utilisateur Valide" line="93">
+<kw name="Connect To Mongo" owner="mongo_library">
+<msg time="2025-08-07T15:07:35.002020" level="INFO">[MongoLibrary] Connexion MongoDB réussie.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="PASS" start="2025-08-07T15:07:34.170525" elapsed="0.831647"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-08-07T15:07:35.003087" level="INFO">${query} = {'email': 'john@gmail.com'}</msg>
+<var>${query}</var>
+<arg>email=john@gmail.com</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-08-07T15:07:35.002725" elapsed="0.000414"/>
+</kw>
+<kw name="Delete Document" owner="mongo_library">
+<msg time="2025-08-07T15:07:35.074371" level="INFO">${result} = 1</msg>
+<var>${result}</var>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${query}</arg>
+<status status="PASS" start="2025-08-07T15:07:35.003362" elapsed="0.071283"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${result} &gt;= 1</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-08-07T15:07:35.075208" elapsed="0.000666"/>
+</kw>
+<doc>D-01 Scénario passant - suppression d’un utilisateur existant</doc>
+<status status="PASS" start="2025-08-07T15:07:34.169753" elapsed="0.906679"/>
+</test>
+<test id="s1-t11" name="Supprimer Utilisateur Inexistant" line="100">
+<kw name="Connect To Mongo" owner="mongo_library">
+<msg time="2025-08-07T15:07:35.880458" level="INFO">[MongoLibrary] Connexion MongoDB réussie.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="PASS" start="2025-08-07T15:07:35.078468" elapsed="0.802113"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-08-07T15:07:35.881388" level="INFO">${query} = {'email': 'nonexistent@gmail.com'}</msg>
+<var>${query}</var>
+<arg>email=nonexistent@gmail.com</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-08-07T15:07:35.881047" elapsed="0.000391"/>
+</kw>
+<kw name="Delete Document" owner="mongo_library">
+<msg time="2025-08-07T15:07:35.949405" level="INFO">${result} = 0</msg>
+<var>${result}</var>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${query}</arg>
+<status status="PASS" start="2025-08-07T15:07:35.881781" elapsed="0.067711"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-08-07T15:07:35.950298" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-08-07T15:07:35.950075" elapsed="0.000273"/>
+</kw>
+<doc>D-02 Scénario non passant - suppression utilisateur inexistant =&gt; 0 suppression</doc>
+<status status="PASS" start="2025-08-07T15:07:35.077579" elapsed="0.872996"/>
+</test>
+<test id="s1-t12" name="Supprimer Avec Champs Vide (Invalide)" line="107">
+<kw name="Connect To Mongo" owner="mongo_library">
+<msg time="2025-08-07T15:07:36.781606" level="INFO">[MongoLibrary] Connexion MongoDB réussie.</msg>
+<arg>${uri}</arg>
+<arg>${db_name}</arg>
+<status status="PASS" start="2025-08-07T15:07:35.952042" elapsed="0.829702"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-08-07T15:07:36.782717" level="INFO">${query} = {}</msg>
+<var>${query}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-08-07T15:07:36.782349" elapsed="0.000417"/>
+</kw>
+<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<kw name="Delete Document" owner="mongo_library">
+<msg time="2025-08-07T15:07:36.783244" level="FAIL">ValueError: La requête de suppression ne peut pas être vide.</msg>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${query}</arg>
+<status status="FAIL" start="2025-08-07T15:07:36.783071" elapsed="0.000719">ValueError: La requête de suppression ne peut pas être vide.</status>
+</kw>
+<arg>*</arg>
+<arg>Delete Document</arg>
+<arg>${COLLECTION_NAME}</arg>
+<arg>${query}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<status status="PASS" start="2025-08-07T15:07:36.782959" elapsed="0.000942"/>
+</kw>
+<doc>D-03 Scénario non passant - suppression avec requête vide =&gt; erreur</doc>
+<status status="PASS" start="2025-08-07T15:07:35.951608" elapsed="0.832553"/>
+</test>
+<status status="PASS" start="2025-08-07T15:07:25.465137" elapsed="11.320721"/>
+</suite>
+<statistics>
+<total>
+<stat pass="12" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Testuser" id="s1" pass="12" fail="0" skip="0">Testuser</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
