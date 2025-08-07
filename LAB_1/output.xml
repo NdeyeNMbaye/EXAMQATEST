@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-07-28T22:09:42.250827" rpa="false" schemaversion="5">
+<suite id="s1" name="Fakestore Tests" source="C:\Users\Ndeye Mbaye\Desktop\QA Test\TestMongoExam\TestCases\fakestore_tests.robot">
+<kw name="Connect To Mongo" owner="mongo_library" type="SETUP">
+<msg time="2025-07-28T22:10:04.025619" level="FAIL">ConfigurationError: The resolution lifetime expired after 21.173 seconds: Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.</msg>
+<arg>${MONGO_URI}</arg>
+<arg>fakestoredb</arg>
+<doc>Établit une connexion à la base de données MongoDB.</doc>
+<status status="FAIL" start="2025-07-28T22:09:42.647108" elapsed="21.382305">ConfigurationError: The resolution lifetime expired after 21.173 seconds: Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.</status>
+</kw>
+<test id="s1-t1" line="14">
+<status status="FAIL" start="2025-07-28T22:10:04.029763" elapsed="0.000871">Parent suite setup failed:
+ConfigurationError: The resolution lifetime expired after 21.173 seconds: Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.</status>
+</test>
+<test id="s1-t2" name="Créer Un Produit Valide" line="16">
+<status status="FAIL" start="2025-07-28T22:10:04.032182" elapsed="0.000549">Parent suite setup failed:
+ConfigurationError: The resolution lifetime expired after 21.173 seconds: Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.</status>
+</test>
+<test id="s1-t3" name="Créer Produit Sans Titre (Invalide)" line="21">
+<status status="FAIL" start="2025-07-28T22:10:04.033814" elapsed="0.000476">Parent suite setup failed:
+ConfigurationError: The resolution lifetime expired after 21.173 seconds: Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.</status>
+</test>
+<test id="s1-t4" name="Créer Produit Prix Texte (Invalide)" line="25">
+<status status="FAIL" start="2025-07-28T22:10:04.035682" elapsed="0.000724">Parent suite setup failed:
+ConfigurationError: The resolution lifetime expired after 21.173 seconds: Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.</status>
+</test>
+<test id="s1-t5" name="Li" line="31">
+<status status="FAIL" start="2025-07-28T22:10:04.037573" elapsed="0.000807">Parent suite setup failed:
+ConfigurationError: The resolution lifetime expired after 21.173 seconds: Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.</status>
+</test>
+<test id="s1-t6" name="Lire Produits Avec Catégorie Vide (Invalide)" line="35">
+<status status="FAIL" start="2025-07-28T22:10:04.039564" elapsed="0.000594">Parent suite setup failed:
+ConfigurationError: The resolution lifetime expired after 21.173 seconds: Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.</status>
+</test>
+<test id="s1-t7" name="Lire Produits Avec Prix Negatif (Invalide)" line="39">
+<status status="FAIL" start="2025-07-28T22:10:04.041147" elapsed="0.000592">Parent suite setup failed:
+ConfigurationError: The resolution lifetime expired after 21.173 seconds: Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.</status>
+</test>
+<test id="s1-t8" name="Mettre à Jour Prix Produit Valide" line="45">
+<status status="FAIL" start="2025-07-28T22:10:04.043133" elapsed="0.000880">Parent suite setup failed:
+ConfigurationError: The resolution lifetime expired after 21.173 seconds: Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.</status>
+</test>
+<test id="s1-t9" name="Mettre Prix Vide (Invalide)" line="51">
+<status status="FAIL" start="2025-07-28T22:10:04.045214" elapsed="0.000509">Parent suite setup failed:
+ConfigurationError: The resolution lifetime expired after 21.173 seconds: Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.</status>
+</test>
+<test id="s1-t10" name="Mettre Prix Négatif (Invalide)" line="56">
+<status status="FAIL" start="2025-07-28T22:10:04.047350" elapsed="0.000698">Parent suite setup failed:
+ConfigurationError: The resolution lifetime expired after 21.173 seconds: Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.</status>
+</test>
+<test id="s1-t11" name="Supprimer Produit Valide" line="63">
+<status status="FAIL" start="2025-07-28T22:10:04.049484" elapsed="0.000907">Parent suite setup failed:
+ConfigurationError: The resolution lifetime expired after 21.173 seconds: Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.</status>
+</test>
+<test id="s1-t12" name="Supprimer Produit Inexistant" line="68">
+<status status="FAIL" start="2025-07-28T22:10:04.051848" elapsed="0.000779">Parent suite setup failed:
+ConfigurationError: The resolution lifetime expired after 21.173 seconds: Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.</status>
+</test>
+<test id="s1-t13" name="Supprimer Avec Champs Vide (Invalide)" line="73">
+<status status="FAIL" start="2025-07-28T22:10:04.053777" elapsed="0.000743">Parent suite setup failed:
+ConfigurationError: The resolution lifetime expired after 21.173 seconds: Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.</status>
+</test>
+<kw name="Disconnect From Mongo" type="TEARDOWN">
+<msg time="2025-07-28T22:10:04.058502" level="FAIL">No keyword with name 'Disconnect From Mongo' found.</msg>
+<status status="FAIL" start="2025-07-28T22:10:04.058335" elapsed="0.000290">No keyword with name 'Disconnect From Mongo' found.</status>
+</kw>
+<status status="FAIL" start="2025-07-28T22:09:42.253864" elapsed="21.805117">Suite setup failed:
+ConfigurationError: The resolution lifetime expired after 21.173 seconds: Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.; Server Do53:192.168.1.1@53 answered The DNS operation timed out.
+
+Also suite teardown failed:
+No keyword with name 'Disconnect From Mongo' found.</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="13" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Fakestore Tests" id="s1" pass="0" fail="13" skip="0">Fakestore Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
